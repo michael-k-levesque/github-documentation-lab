@@ -193,6 +193,25 @@ This log provides supporting evidence for the accuracy of the project's technica
 
 **Scope Note:** This exercise validates the documented request/response behavior at the time of testing. The collection is now archived in this repository for independent import and rerunning; the export does not contain past execution results. No independent peer review was performed.
 
+## GH-009 — Postman Guide Procedure Verification (Pending)
+
+**Objective:** Independently verify that a reader can import the archived GH-008 Postman collection using the instructions in [How to Test the GitHub REST API Using Postman](test-github-rest-api-with-postman.md), execute the three requests, and interpret the resulting 12 assertions.
+
+**Prerequisites:** Postman web or desktop with a functioning request agent and internet access; the [archived collection](../postman/GitHub-REST-API-Validation.postman_collection.json).
+
+**Planned procedure:**
+1. Import the GitHub-hosted Collection v2.1 JSON into a fresh Postman collection or workspace.
+2. Confirm all three requests and their methods, endpoints, API-version headers, and scripts match the archived copy.
+3. Send the three requests individually and inspect response bodies and Test Results.
+4. Run one functional collection iteration, if supported in the chosen client, and inspect the aggregate results.
+5. Compare the guide's instructions and troubleshooting explanations with the actual interface and response behavior; document any mismatch and correct the guide before finalizing it.
+
+**Expected result:** Three imported requests and 12 post-response assertions are present. Under normal public API behavior, two requests return 200, one intentionally returns 404, and all 12 assertions pass.
+
+**Observed result:** Not yet recorded; the earlier GH-008 execution results are not a substitute for independent verification of the GH-009 import/run instructions.
+
+**Status:** Pending — draft reviewed against the existing exported collection and official documentation, but end-to-end reproduction remains outstanding.
+
 ## Planned Validation Activities
 
 - [X] GH-003 — Create and edit a documentation file.
@@ -201,6 +220,7 @@ This log provides supporting evidence for the accuracy of the project's technica
 - [X] GH-006 — Review and merge a pull request.
 - [X] GH-007 — Test repository access and configuration.
 - [X] GH-008 — Validate selected GitHub REST API operations.
+- [ ] GH-009 — Verify the Postman API testing guide through a fresh import and run.
 
 ## Validation Standards
 
