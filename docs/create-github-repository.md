@@ -39,9 +39,16 @@ The default branch name depends on the applicable GitHub configuration.
 
 ## Verify the Repository
 
-Confirm that the repository name and owner are correct, the visibility matches your selection, and any requested initialization files exist.
+After creating the repository, confirm that GitHub saved your selected configuration:
 
-If you initialized the repository with a README, open the file and confirm that its contents are displayed.
+1. On the repository's **Code** tab, verify that the owner and repository name are correct.
+2. Check the **Public** or **Private** badge beside the repository name. Confirm that it matches the visibility you selected.
+3. If you enabled **Add README**, verify that `README.md` appears in the file list and that its contents display correctly.
+4. If GitHub created an initial commit, open the repository's commit history and confirm that the commit is recorded.
+
+## Verification Result
+
+The repository opens under the selected owner, displays the chosen visibility, and contains the requested initialization files.
 
 ## Troubleshooting
 
