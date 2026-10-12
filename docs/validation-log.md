@@ -141,6 +141,58 @@ This log provides supporting evidence for the accuracy of the project's technica
 
 **Scope Note:** This test verified visible administrative settings. It did not test unauthorized access, GitHub App permissions, personal access tokens, or the effectiveness of security controls through simulated attacks. The absence of enforced branch protection is a documented limitation, not a successful security-control test.
 
+## Test GH-008 — Validate Selected GitHub REST API Operations
+
+**Objective:** Validate selected read-only GitHub REST API operations, expected error responses, response data, and observed browser cache behavior using repeatable tests.
+
+**Prerequisites:** Internet access, a browser with developer tools, and a Postman workspace. The API examples use public repository data and require no access token.
+
+**Test Environment:**
+- API host: `https://api.github.com`.
+- Test repository: `octocat/Hello-World` (public).
+- Clients: Browser with Chrome DevTools Network panel; Postman web workspace using Cloud Agent.
+- Postman collection: `GitHub REST API Validation`.
+- Authorization: No Auth.
+- Request headers: `Accept: application/vnd.github+json` and `X-GitHub-Api-Version: 2026-03-10`.
+
+**Procedure:**
+1. Used the browser and Chrome DevTools Network panel to inspect responses from the GitHub REST API, including a successful response, a cache-related `304 Not Modified` response, and a `404 Not Found` response.
+2. Created three named `GET` requests in the Postman collection.
+3. Added four post-response JavaScript assertions to each request for status, JSON content type, and endpoint-specific response data.
+4. Saved and reran the requests with the common GitHub API headers enabled.
+5. Compared the observed responses and automated test outcomes with the expected behaviors.
+
+**Expected Results:**
+- GH-008-01 — A public-repository lookup returns `200 OK` with JSON identifying the expected repository and public visibility.
+- GH-008-02 — A deliberately invalid repository lookup returns `404 Not Found` with a JSON error response.
+- GH-008-03 — The repository commits endpoint returns `200 OK` with a non-empty JSON array of commits containing identifying fields.
+- Browser caching — A conditional request may produce `304 Not Modified` if the cached representation remains current.
+
+**Observed Results:**
+
+| Test | Endpoint or scenario | Observed result | Postman assertions |
+| --- | --- | --- | --- |
+| GH-008-01 — Retrieve Public Repository | `GET /repos/octocat/Hello-World` | `200 OK`; JSON identified repository `octocat/Hello-World` (ID `1296269`), owner `octocat`, and `private: false`; 129 ms on the final run. | 4/4 passed |
+| GH-008-02 — Repository Not Found | `GET /repos/octocat/Hello-World-NOT-A-REAL-REPO-GH008` | `404 Not Found`; JSON included `message: "Not Found"` and `status: "404"`; 101 ms on the final run. | 4/4 passed |
+| GH-008-03 — List Repository Commits | `GET /repos/octocat/Hello-World/commits` | `200 OK`; non-empty JSON array containing commit `sha` and `commit.message`; 113 ms. | 4/4 passed |
+| Browser cache observation | Public repository lookup inspected with Chrome DevTools | `304 Not Modified` observed for a cached representation; `200 OK` also observed with caching disabled. | Observation only; not part of the 12 Postman assertions |
+
+**Evidence:**
+- Postman collection: `GitHub REST API Validation`; requests `GH-008-01`, `GH-008-02`, and `GH-008-03` saved in the workspace.
+- Screenshots captured during testing showed the configured requests, API responses, and `4/4` passing test results for each request. These screenshots are not stored in this GitHub repository.
+- Public API reference: https://docs.github.com/en/rest/about-the-rest-api/api-versions
+
+**Findings:**
+- All 12 automated assertions passed across three saved requests and two distinct read-only API operations.
+- Expected `404` responses are successful negative tests when the response matches the expected behavior; they are not successful HTTP requests.
+- A `404` from GitHub does not, by itself, prove a repository does not exist, because private or inaccessible repositories can return the same status.
+- A `304` response is conditional on cache validators and was observed in the browser, not enforced as a repeatable Postman assertion.
+- The results reflect public, unauthenticated requests and do not establish behavior for private repositories, authenticated access, mutation endpoints, or rate limits.
+
+**Status:** Passed — selected GitHub REST API operations and negative response validated; 12/12 Postman assertions passed. Browser cache behavior separately observed.
+
+**Scope Note:** This exercise validates the documented request/response behavior at the time of testing. The Postman collection has not been exported to this repository, and no independent peer review was performed.
+
 ## Planned Validation Activities
 
 - [X] GH-003 — Create and edit a documentation file.
@@ -148,7 +200,7 @@ This log provides supporting evidence for the accuracy of the project's technica
 - [X] GH-005 — Submit a pull request.
 - [X] GH-006 — Review and merge a pull request.
 - [X] GH-007 — Test repository access and configuration.
-- [ ] GH-008 — Validate selected GitHub REST API operations.
+- [X] GH-008 — Validate selected GitHub REST API operations.
 
 ## Validation Standards
 
