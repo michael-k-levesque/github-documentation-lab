@@ -260,6 +260,29 @@ This log provides supporting evidence for the accuracy of the project's technica
 
 **Scope Note:** No local full-clone forensic scanning, examination of unreachable Git objects, complete account-wide settings audit, or independent penetration/security review was performed. Making repository history public is effectively irreversible for third-party copies.
 
+## GH-012 — Public Portfolio Release Check
+
+**Objective:** Verify that the owner-approved existing repository has changed from private to public while retaining its original documentation and commit history, and identify any remaining publication checks.
+
+**Prerequisites:** Completed GH-011 pre-publication review and the repository owner's GitHub visibility change.
+
+**Procedure performed (October 12, 2026):**
+1. Reviewed the owner's GitHub Settings → General → Danger Zone screenshot, which states **This repository is currently public**.
+2. Queried the connected GitHub repository metadata for `michael-k-levesque/github-documentation-lab`; it reported `visibility: public` and default branch `main`.
+3. Retrieved README, validation log, and the GH-011 audit report from `main` through the connected GitHub integration; the files remained accessible through that authenticated connection.
+4. Verified that the existing published README correctly describes the repository as a public portfolio project while preserving historical pre-publication audit descriptions.
+5. Attempted independent signed-out access with a separate browsing service and an unauthenticated network client, but neither was available in this environment. **No signed-out read test was completed.**
+
+**Expected Result:** GitHub reports public visibility, original project files are intact, and a signed-out reader can open the repository, guides, JSON artifact and pull-request history.
+
+**Observed Result:** **Public visibility confirmed** by GitHub's metadata and the owner's settings screenshot; current documentation accessible via authenticated connector. Independent anonymous-view access could not be tested here.
+
+**Status:** **Partially passed — public visibility verified; signed-out access validation pending.** Do not count the signed-out check as passed until someone opens the repository and representative documents in a private/incognito browser window while logged out of GitHub.
+
+**Remaining manual verification:** From a signed-out/private window, open [repository home](https://github.com/michael-k-levesque/github-documentation-lab), [repository creation guide](https://github.com/michael-k-levesque/github-documentation-lab/blob/main/docs/create-github-repository.md), [Postman guide](https://github.com/michael-k-levesque/github-documentation-lab/blob/main/docs/test-github-rest-api-with-postman.md), [Postman JSON](https://github.com/michael-k-levesque/github-documentation-lab/blob/main/postman/GitHub-REST-API-Validation.postman_collection.json), and [PR #4](https://github.com/michael-k-levesque/github-documentation-lab/pull/4). Record any access failures or rendering problems.
+
+**Scope Note:** GH-011's security/history review was a bounded audit; the current publication check does not extend that audit into a penetration test, historical artifact scan, or proof of external accessibility.
+
 ## Planned Validation Activities
 
 - [X] GH-003 — Create and edit a documentation file.
@@ -271,6 +294,7 @@ This log provides supporting evidence for the accuracy of the project's technica
 - [X] GH-009 — Verify the Postman API testing guide through a fresh import and run.
 - [X] GH-010 — Review documentation quality and record publication blockers.
 - [X] GH-011 — Review reachable repository history and publication risks.
+- [ ] GH-012 — Verify public visibility **and** signed-out access to the portfolio repository.
 
 ## Validation Standards
 
