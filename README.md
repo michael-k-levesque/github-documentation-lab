@@ -47,7 +47,7 @@ The GH-008 case study includes three **read-only, unauthenticated** requests aga
 4. Click **Send**, then open **Test Results** to see the four automated assertions for that request. Repeat for the other two requests, or run the collection in Postman's Collection Runner.
 5. Expect **12 passing assertions across the three requests** when GitHub returns the documented responses. The `404` in GH-008-02 is intentional; its assertions should pass.
 
-For a detailed walkthrough, including error interpretation, test assertions, troubleshooting, and evidence collection, see the [GH-009 Postman testing guide](docs/test-github-rest-api-with-postman.md). **GH-009 is still a draft pending an independent import-and-run check.**
+For a detailed walkthrough, including error interpretation, test assertions, troubleshooting, and evidence collection, see the [GH-009 Postman testing guide](docs/test-github-rest-api-with-postman.md). **GH-009 was reproduced on October 12, 2026: the archived collection imported successfully and all 12 assertions passed in a local functional collection run.** This was an author-led walkthrough, not independent peer review.
 
 The exported collection contains the request definitions and test scripts; **it does not include stored response snapshots or independently certify future test runs**. The observed results and testing limitations are recorded in [GH-008 of the validation log](docs/validation-log.md#test-gh-008--validate-selected-github-rest-api-operations).
 
