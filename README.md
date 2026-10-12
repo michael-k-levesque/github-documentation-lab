@@ -68,11 +68,11 @@ Documentation will be developed using the following principles:
 
 ## Project Status
 
-**Documentation reviewed; publication decision pending.**
+**Public portfolio repository — published October 12, 2026.**
 
-GH-001 through GH-009 have recorded workflow outcomes, including GH-009's successful import-and-rerun verification. GH-010 reviewed documentation quality. GH-011 found no identified blocker in the reviewed reachable history or repository discussions to publishing this **existing** repository, with the limits documented in the [publication security review](docs/publication-security-review-gh-011.md). The repository-creation guide remains a draft pending a separate end-to-end beginner walkthrough.
+GH-001 through GH-009 record tested workflow outcomes, including GH-009's successful import-and-rerun verification. GH-010 reviewed documentation quality. GH-011 inspected the reachable history, current files, and repository discussions and found no identified publication blocker, subject to the limits documented in the [publication security review](docs/publication-security-review-gh-011.md). GitHub now reports the repository visibility as **public**.
 
-**Visibility at last review:** Private. Public access must be enabled by the repository owner in GitHub settings and verified from a signed-out browser before sharing the link. Once visibility changes, this statement and the older historical status notes should be read in light of the publication date.
+The repository-creation guide remains a draft pending a separate end-to-end beginner walkthrough. Earlier documents and commits that describe the repository as private or publication-blocked record the historical state at the time of those reviews.
 
 ## Project Context
 
