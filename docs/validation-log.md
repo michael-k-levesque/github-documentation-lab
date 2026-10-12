@@ -193,24 +193,40 @@ This log provides supporting evidence for the accuracy of the project's technica
 
 **Scope Note:** This exercise validates the documented request/response behavior at the time of testing. The collection is now archived in this repository for independent import and rerunning; the export does not contain past execution results. No independent peer review was performed.
 
-## GH-009 — Postman Guide Procedure Verification (Pending)
+## GH-009 — Postman Guide Procedure Verification
 
-**Objective:** Independently verify that a reader can import the archived GH-008 Postman collection using the instructions in [How to Test the GitHub REST API Using Postman](test-github-rest-api-with-postman.md), execute the three requests, and interpret the resulting 12 assertions.
+**Objective:** Reproduce the documented GH-008 tests by downloading and importing the archived Postman collection and executing the requests individually and together using the Collection Runner.
 
-**Prerequisites:** Postman web or desktop with a functioning request agent and internet access; the [archived collection](../postman/GitHub-REST-API-Validation.postman_collection.json).
+**Prerequisites:** Postman web workspace with a functioning request agent and internet access; [the archived Collection v2.1 JSON](../postman/GitHub-REST-API-Validation.postman_collection.json).
 
-**Planned procedure:**
-1. Import the GitHub-hosted Collection v2.1 JSON into a fresh Postman collection or workspace.
-2. Confirm all three requests and their methods, endpoints, API-version headers, and scripts match the archived copy.
-3. Send the three requests individually and inspect response bodies and Test Results.
-4. Run one functional collection iteration, if supported in the chosen client, and inspect the aggregate results.
-5. Compare the guide's instructions and troubleshooting explanations with the actual interface and response behavior; document any mismatch and correct the guide before finalizing it.
+**Procedure performed (October 12, 2026):**
+1. Downloaded the collection JSON from the GitHub repository.
+2. Imported it into Postman as a separate collection, **GitHub REST API Validation Copy**, leaving the original collection unchanged.
+3. Confirmed that the imported copy contained all three requests and the documented URLs and API-version/Accept headers.
+4. Sent each of the three imported requests separately and inspected the HTTP response and **Test Results** (four passing assertions per request).
+5. Opened the imported collection's **Run** option and executed a **Functional**, **Local** collection run with **all three requests selected**, **Iteration data: None**, and **Iterations: 1**.
+6. Inspected the Collection Runner results and confirmed the individual and aggregate outcomes against the guide.
 
-**Expected result:** Three imported requests and 12 post-response assertions are present. Under normal public API behavior, two requests return 200, one intentionally returns 404, and all 12 assertions pass.
+**Expected Result:** Two HTTP 200 responses; one intentional HTTP 404 response; all three requests run with 12 passing post-response assertions and no test failures.
 
-**Observed result:** Not yet recorded; the earlier GH-008 execution results are not a substitute for independent verification of the GH-009 import/run instructions.
+**Observed Result (Postman Collection Runner screenshot):**
 
-**Status:** Pending — draft reviewed against the existing exported collection and official documentation, but end-to-end reproduction remains outstanding.
+| Test ID | HTTP response | Assertions |
+| --- | --- | --- |
+| GH-008-01 — Retrieve Public Repository | 200 | 4 passed |
+| GH-008-02 — Repository Not Found | 404 (expected negative case) | 4 passed |
+| GH-008-03 — List Repository Commits | 200 | 4 passed |
+| **Combined** | **3 requests, 1 iteration** | **12 passed, 0 failed, 0 skipped** |
+
+- **Run timestamp displayed by Postman:** October 12, 2026, 12:26:14 PM (time zone not displayed).
+- **Source:** Runner; **Environment:** none; **Duration:** 1 second 447 milliseconds; **Errors:** 0.
+- **Supporting evidence:** Postman screenshots supplied during the step-by-step walkthrough, including the imported collection, individual request results, and final Runner summary. The screenshots were reviewed in the conversation and are not stored in this Git repository.
+- **Content verification:** The published Collection v2.1 JSON was previously checked to contain the three GET requests, the two enabled GitHub headers per request, and the 12 original post-response assertions.
+- **Document verification:** Confirmed the actual Postman web import-as-copy and Local Functional Runner workflow matched the guide's instructions.
+
+**Status:** Passed — the project author reproduced all three individual requests and the full 12-assertion collection run from the GitHub-exported artifact.
+
+**Scope Note:** This is an author-led reproduction/acceptance test, **not an independent peer review**. Rate-limit troubleshooting, unexpected API failures, other operating systems or Postman clients, authentication, and CI execution were not tested by this walkthrough. Future GitHub or Postman interface changes may require revalidation.
 
 ## Planned Validation Activities
 
@@ -220,7 +236,7 @@ This log provides supporting evidence for the accuracy of the project's technica
 - [X] GH-006 — Review and merge a pull request.
 - [X] GH-007 — Test repository access and configuration.
 - [X] GH-008 — Validate selected GitHub REST API operations.
-- [ ] GH-009 — Verify the Postman API testing guide through a fresh import and run.
+- [X] GH-009 — Verify the Postman API testing guide through a fresh import and run.
 
 ## Validation Standards
 
