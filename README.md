@@ -20,8 +20,8 @@ This repository provides a controlled practice environment for researching GitHu
 ## Documentation Structure
 
 - `README.md` — Project introduction, documentation index, and testing instructions.
-- [`docs/create-github-repository.md`](docs/create-github-repository.md) — Draft task-based GitHub repository creation guide (full technical review pending).
-- [`docs/validation-log.md`](docs/validation-log.md) — Test procedures, observed results, and limitations for GH-001 through GH-009.
+- [`docs/create-github-repository.md`](docs/create-github-repository.md) — Source-reviewed repository creation guide (complete beginner walkthrough pending).
+- [`docs/validation-log.md`](docs/validation-log.md) — Test procedures, observed results, and limitations through GH-012, including the publication check.
 - [`docs/test-github-rest-api-with-postman.md`](docs/test-github-rest-api-with-postman.md) — GH-009 Postman testing guide (**author-led reproduction passed October 12, 2026; no independent peer review**).
 - [`postman/GitHub-REST-API-Validation.postman_collection.json`](postman/GitHub-REST-API-Validation.postman_collection.json) — Importable Postman collection with automated REST API checks.
 - [`docs/quality-review-gh-010.md`](docs/quality-review-gh-010.md) — GH-010 documentation quality review and original release-gate findings.
@@ -72,7 +72,9 @@ Documentation will be developed using the following principles:
 
 GH-001 through GH-009 record tested workflow outcomes, including GH-009's successful import-and-rerun verification. GH-010 reviewed documentation quality. GH-011 inspected the reachable history, current files, and repository discussions and found no identified publication blocker, subject to the limits documented in the [publication security review](docs/publication-security-review-gh-011.md). GitHub now reports the repository visibility as **public**.
 
-The repository-creation guide remains a draft pending a separate end-to-end beginner walkthrough. Earlier documents and commits that describe the repository as private or publication-blocked record the historical state at the time of those reviews.
+The repository-creation guide remains a draft pending a separate end-to-end beginner walkthrough. Earlier documents and commits describing the repository as private or publication-blocked record the historical state at those review dates.
+
+**Public-access verification:** GitHub's connected repository metadata reports `visibility: public`. The [GH-012 validation entry](docs/validation-log.md#gh-012--public-portfolio-release-check) records this result and the remaining signed-out browser check. Public visibility is confirmed; a separate unauthenticated browser visit has not yet been independently verified by this review.
 
 ## Project Context
 
