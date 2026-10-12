@@ -244,6 +244,22 @@ This log provides supporting evidence for the accuracy of the project's technica
 
 **Scope Note:** This is a static/documentary review, not a new external Postman run or independent peer approval. The creation guide remains a draft pending a full beginner walkthrough. See [GH-010 report](quality-review-gh-010.md) for findings and publication gate.
 
+## GH-011 — Pre-Publication History and Security Review
+
+**Objective:** Assess whether the existing private documentation repository is an appropriate candidate for public portfolio access without discarding its authentic Git history.
+
+**Procedure:** Audited the 29 commits reachable from the reviewed `main` baseline, the tracked files and historical changed-file paths, two already-merged branch references, three merged pull requests and their available discussion/review content, Git tag references, releases, and accessible GitHub Actions run metadata. Applied bounded pattern checks to current files and historical commit changes. Compared publication and licensing implications with current GitHub Docs.
+
+**Expected Result:** No identified secret or unexpectedly sensitive artifact in the reviewed reachable repository materials; a clear record of residual risks and owner actions required for publication.
+
+**Observed Result:** No matching embedded credentials, PEM private keys, conventional personal email or phone-number strings, unexpected historical file types, or unmerged branch changes in the inspected content. Commit author addresses use GitHub noreply aliases. No GitHub Actions workflow runs or releases were returned. The reviewed repository history and discussions support publishing the **original repository** rather than creating a detached showcase.
+
+**Evidence:** [GH-011 publication and security review](publication-security-review-gh-011.md).
+
+**Status:** Passed with bounded review limitations — no identified blocker to public release in the materials inspected. **Repository visibility has not been changed as part of this test**; verify owner-controlled publication and signed-out access separately.
+
+**Scope Note:** No local full-clone forensic scanning, examination of unreachable Git objects, complete account-wide settings audit, or independent penetration/security review was performed. Making repository history public is effectively irreversible for third-party copies.
+
 ## Planned Validation Activities
 
 - [X] GH-003 — Create and edit a documentation file.
@@ -254,6 +270,7 @@ This log provides supporting evidence for the accuracy of the project's technica
 - [X] GH-008 — Validate selected GitHub REST API operations.
 - [X] GH-009 — Verify the Postman API testing guide through a fresh import and run.
 - [X] GH-010 — Review documentation quality and record publication blockers.
+- [X] GH-011 — Review reachable repository history and publication risks.
 
 ## Validation Standards
 

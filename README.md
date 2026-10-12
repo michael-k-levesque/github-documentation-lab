@@ -2,6 +2,8 @@
 
 An independent technical-writing project focused on developing, testing, and validating GitHub documentation using real software workflows.
 
+**Portfolio case study:** This repository shows the actual documentation-development process: version-controlled task guides, branching and pull-request exercises, a reusable Postman REST API test collection (three requests / twelve assertions), and a validation log distinguishing observed results from remaining limitations. Tests were performed by the project author; no independent peer review is claimed.
+
 ## Project Purpose
 
 This repository provides a controlled practice environment for researching GitHub functionality, documenting technical procedures, and verifying instructions before incorporating them into a professional documentation portfolio.
@@ -22,7 +24,8 @@ This repository provides a controlled practice environment for researching GitHu
 - [`docs/validation-log.md`](docs/validation-log.md) — Test procedures, observed results, and limitations for GH-001 through GH-009.
 - [`docs/test-github-rest-api-with-postman.md`](docs/test-github-rest-api-with-postman.md) — GH-009 Postman testing guide (**author-led reproduction passed October 12, 2026; no independent peer review**).
 - [`postman/GitHub-REST-API-Validation.postman_collection.json`](postman/GitHub-REST-API-Validation.postman_collection.json) — Importable Postman collection with automated REST API checks.
-- [`docs/quality-review-gh-010.md`](docs/quality-review-gh-010.md) — GH-010 documentation quality review, corrections, verification method, and outstanding publication decisions.
+- [`docs/quality-review-gh-010.md`](docs/quality-review-gh-010.md) — GH-010 documentation quality review and original release-gate findings.
+- [`docs/publication-security-review-gh-011.md`](docs/publication-security-review-gh-011.md) — GH-011 review of reachable commit history, pull-request discussions, current files, and publication risks.
 
 ## Run the GitHub REST API tests in Postman
 
@@ -67,7 +70,9 @@ Documentation will be developed using the following principles:
 
 **Documentation reviewed; publication decision pending.**
 
-GH-001 through GH-009 have recorded workflow outcomes, including GH-009's successful import-and-rerun verification. GH-010 reviews consistency, source alignment, and portfolio presentation. The repository-creation guide remains a draft pending a separate end-to-end novice walkthrough. The repository is currently **private**; outsiders cannot browse these links unless granted access. Publication requires an explicit visibility and history review. See the [GH-010 review](docs/quality-review-gh-010.md) for scope and remaining work.
+GH-001 through GH-009 have recorded workflow outcomes, including GH-009's successful import-and-rerun verification. GH-010 reviewed documentation quality. GH-011 found no identified blocker in the reviewed reachable history or repository discussions to publishing this **existing** repository, with the limits documented in the [publication security review](docs/publication-security-review-gh-011.md). The repository-creation guide remains a draft pending a separate end-to-end beginner walkthrough.
+
+**Visibility at last review:** Private. Public access must be enabled by the repository owner in GitHub settings and verified from a signed-out browser before sharing the link. Once visibility changes, this statement and the older historical status notes should be read in light of the publication date.
 
 ## Project Context
 
