@@ -1,0 +1,136 @@
+{
+  "info": {
+    "name": "GitHub REST API Validation",
+    "description": "Portable, read-only GitHub REST API test collection for the GitHub Documentation Lab (GH-008). Three unauthenticated GET requests exercise repository retrieval (200), an expected missing-repository response (404), and commit listing (200). Each request contains four post-response assertions (12 total). See docs/validation-log.md in the project repository for test observations, evidence, and limitations. No credentials are required or included.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GH-008-01 — Retrieve Public Repository (200 OK)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "\r\npm.test(\"GH-008-01: HTTP status is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\npm.test(\"Response content type is JSON\", function () {\r\n    pm.expect(\r\n        pm.response.headers.get(\"Content-Type\")\r\n    ).to.include(\"application/json\");\r\n});\r\n\r\nconst repository = pm.response.json();\r\n\r\npm.test(\"Repository identity is correct\", function () {\r\n    pm.expect(repository.id).to.eql(1296269);\r\n    pm.expect(repository.name).to.eql(\"Hello-World\");\r\n    pm.expect(repository.full_name).to.eql(\"octocat/Hello-World\");\r\n    pm.expect(repository.owner.login).to.eql(\"octocat\");\r\n});\r\n\r\npm.test(\"Repository is public\", function () {\r\n    pm.expect(repository.private).to.eql(false);\r\n});\r\n"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.github+json"
+          },
+          {
+            "key": "X-GitHub-Api-Version",
+            "value": "2026-03-10"
+          }
+        ],
+        "url": {
+          "raw": "https://api.github.com/repos/octocat/Hello-World",
+          "protocol": "https",
+          "host": [
+            "api",
+            "github",
+            "com"
+          ],
+          "path": [
+            "repos",
+            "octocat",
+            "Hello-World"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GH-008-02 — Repository Not Found (404)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "\r\npm.test(\"GH-008-02: HTTP status is 404\", function () {\r\n    pm.response.to.have.status(404);\r\n});\r\n\r\npm.test(\"Response content type is JSON\", function () {\r\n    pm.expect(\r\n        pm.response.headers.get(\"Content-Type\")\r\n    ).to.include(\"application/json\");\r\n});\r\n\r\npm.test(\"Error message is Not Found\", function () {\r\n    const error = pm.response.json();\r\n    pm.expect(error.message).to.eql(\"Not Found\");\r\n});\r\n\r\npm.test(\"Error status field is 404\", function () {\r\n    const error = pm.response.json();\r\n    pm.expect(error.status).to.eql(\"404\");\r\n});\r\n"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.github+json"
+          },
+          {
+            "key": "X-GitHub-Api-Version",
+            "value": "2026-03-10"
+          }
+        ],
+        "url": {
+          "raw": "https://api.github.com/repos/octocat/Hello-World-NOT-A-REAL-REPO-GH008",
+          "protocol": "https",
+          "host": [
+            "api",
+            "github",
+            "com"
+          ],
+          "path": [
+            "repos",
+            "octocat",
+            "Hello-World-NOT-A-REAL-REPO-GH008"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GH-008-03 — List Repository Commits (200 OK)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "\r\npm.test(\"GH-008-03: HTTP status is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\npm.test(\"Response content type is JSON\", function () {\r\n    pm.expect(\r\n        pm.response.headers.get(\"Content-Type\")\r\n    ).to.include(\"application/json\");\r\n});\r\n\r\npm.test(\"Response contains commits\", function () {\r\n    const commits = pm.response.json();\r\n    pm.expect(commits).to.be.an(\"array\").that.is.not.empty;\r\n});\r\n\r\npm.test(\"Commit includes SHA and message\", function () {\r\n    const commits = pm.response.json();\r\n    pm.expect(commits[0].sha).to.be.a(\"string\").and.not.empty;\r\n    pm.expect(commits[0].commit.message).to.be.a(\"string\").and.not.empty;\r\n});\r\n"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.github+json"
+          },
+          {
+            "key": "X-GitHub-Api-Version",
+            "value": "2026-03-10"
+          }
+        ],
+        "url": {
+          "raw": "https://api.github.com/repos/octocat/Hello-World/commits",
+          "protocol": "https",
+          "host": [
+            "api",
+            "github",
+            "com"
+          ],
+          "path": [
+            "repos",
+            "octocat",
+            "Hello-World",
+            "commits"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
