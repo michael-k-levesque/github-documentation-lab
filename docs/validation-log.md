@@ -47,12 +47,60 @@ This log provides supporting evidence for the accuracy of the project's technica
 
 **Scope Note:** The document remains a draft. This test verifies the documentation workflow, not completion of the guide's full technical review.
 
+## Test GH-004 — Create and Switch Branches
+
+**Objective:** Create a documentation working branch and verify branch switching and isolation.
+
+**Prerequisites:** Existing GitHub repository with the `main` branch.
+
+**Procedure:** Created `docs/improve-repository-guide` from `main`, switched between branches, and committed a documentation improvement on the working branch.
+
+**Expected Result:** Both branches are accessible, and changes committed to the working branch remain separate from `main` until merged.
+
+**Observed Result:** GitHub displayed two branches. The working branch was initially synchronized with `main`, then became one commit ahead after committing the documentation improvement (`08aa955`).
+
+**Status:** Passed — branch creation, switching, and separate commit history verified.
+
+## Test GH-005 — Submit a Pull Request
+
+**Objective:** Submit a documentation change for review before merging it into the default branch.
+
+**Prerequisites:** A working branch containing committed changes.
+
+**Procedure:** Created pull request #1 to merge `docs/improve-repository-guide` into `main`. Added a description explaining the changes, validation performed, and related Jira work item GHDCS-1.
+
+**Expected Result:** GitHub creates an open pull request showing the proposed changes and correct source and destination branches.
+
+**Observed Result:** Pull request #1 was created successfully. GitHub identified one commit, one modified file, 11 additions, and no deletions.
+
+**Evidence:** https://github.com/michael-k-levesque/github-documentation-lab/pull/1
+
+**Status:** Passed — pull request creation verified.
+
+## Test GH-006 — Review and Merge a Pull Request
+
+**Objective:** Review proposed documentation changes and merge the approved changes into `main`.
+
+**Prerequisites:** An open pull request containing a documentation modification.
+
+**Procedure:** Inspected the pull request's file comparison, verified the proposed changes, documented a self-review in the pull request conversation, and completed the merge.
+
+**Expected Result:** The pull request merges without conflicts, closes successfully, and makes the documentation changes available on `main`.
+
+**Observed Result:** The comparison showed 11 added lines in one file and no deletions. A self-review was documented with no issues identified. Pull request #1 merged successfully and closed. Merge commit `ab36aa8` was created. The Repository Visibility and Access section was subsequently verified on `main`.
+
+**Evidence:** https://github.com/michael-k-levesque/github-documentation-lab/pull/1
+
+**Status:** Passed — self-review, merge, and destination-branch content verified.
+
+**Scope Note:** This exercise involved a documented self-review, not independent peer approval. Full technical validation of the complete guide remains pending.
+
 ## Planned Validation Activities
 
 - [X] GH-003 — Create and edit a documentation file.
-- [ ] GH-004 — Create and switch branches.
-- [ ] GH-005 — Submit a pull request.
-- [ ] GH-006 — Review and merge a pull request.
+- [X] GH-004 — Create and switch branches.
+- [X] GH-005 — Submit a pull request.
+- [X] GH-006 — Review and merge a pull request.
 - [ ] GH-007 — Test repository access and configuration.
 - [ ] GH-008 — Validate selected GitHub REST API operations.
 
