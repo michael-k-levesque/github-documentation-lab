@@ -3,7 +3,7 @@
 **Review date:** October 12, 2026  
 **Reviewed repository:** `michael-k-levesque/github-documentation-lab`  
 **Baseline:** `main` at `c5cc530a6da60d538226642496a7af0a8a358185`  
-**Decision:** No identified blocker in the inspected repository materials to making this existing repository public. **Visibility remains private until the owner completes GitHub's confirmation process.**
+**Decision:** No identified blocker in the inspected repository materials to making this existing repository public. The repository owner changed its visibility to **public** on October 12, 2026.
 
 ## Purpose
 
@@ -50,7 +50,7 @@ Determine whether the original GitHub Documentation Lab can be made public for a
 
 **Review result: Pass with explicitly documented limitations.** No observed content justifies creating a separate repository or rewriting this one's history. The original repository, with its real revision and testing record, is the recommended portfolio source.
 
-**Publication authorization:** The user selected the existing-repository/public route after an audit. GitHub visibility itself has **not** been changed by this review. Complete GitHub's repository-visibility confirmation in **Settings → General → Danger Zone → Change repository visibility → Public**. Then verify an unauthenticated reader can open the README, both guides, validation log, Postman collection and closed pull requests before distributing the link.
+**Publication completed:** The user selected the existing-repository/public route after the audit and completed GitHub's repository-visibility confirmation on October 12, 2026. GitHub now reports the repository as **public**. Before distributing the link broadly, confirm from a signed-out browser that the README, both guides, validation log, Postman collection, and closed pull requests are accessible as intended.
 
 ## Sources
 
