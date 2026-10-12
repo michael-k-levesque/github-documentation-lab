@@ -74,7 +74,7 @@ GH-001 through GH-009 record tested workflow outcomes, including GH-009's succes
 
 The repository-creation guide remains a draft pending a separate end-to-end beginner walkthrough. Earlier documents and commits describing the repository as private or publication-blocked record the historical state at those review dates.
 
-**Public-access verification:** GitHub's connected repository metadata reports `visibility: public`. The [GH-012 validation entry](docs/validation-log.md#gh-012--public-portfolio-release-check) records this result and the remaining signed-out browser check. Public visibility is confirmed; a separate unauthenticated browser visit has not yet been independently verified by this review.
+**Public-access verification (October 12, 2026):** GitHub reports `visibility: public`. A signed-out Chrome Incognito walkthrough confirmed that the repository homepage and the [Postman guide](docs/test-github-rest-api-with-postman.md) open without authentication and render correctly. See the [GH-012 validation entry](docs/validation-log.md#gh-012--public-portfolio-release-check) for evidence, scope, and limitations.
 
 ## Project Context
 
