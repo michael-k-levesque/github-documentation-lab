@@ -10,7 +10,7 @@
 
 This guide explains how to import a reusable Postman collection, send three read-only requests to GitHub's public REST API, interpret the responses, and evaluate the automated test results. It also shows how to distinguish an intentionally failing HTTP request from a failed test assertion.
 
-The project uses real requests and assertions recorded during GH-008. The archived collection is the executable test artifact; the [GH-008 validation log](validation-log.md#test-gh-008--validate-selected-github-rest-api-operations) records the original observations. A new reader's results may differ if the API, network, or public repository changes.
+The project uses three real requests and 12 post-response assertions recorded during GH-008. The archived collection is the executable test artifact; the [GH-008 validation log](validation-log.md#test-gh-008--validate-selected-github-rest-api-operations) records the original observations. A new reader's results may differ if the API, network, or public repository changes.
 
 ### Learning objectives
 
