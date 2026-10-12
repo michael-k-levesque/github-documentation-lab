@@ -95,13 +95,59 @@ This log provides supporting evidence for the accuracy of the project's technica
 
 **Scope Note:** This exercise involved a documented self-review, not independent peer approval. Full technical validation of the complete guide remains pending.
 
+## Test GH-007 — Repository Access and Configuration
+
+**Objective:** Inspect repository access, branch protection, and security configuration to identify existing controls, limitations, and potential risks.
+
+**Prerequisites:** An existing private GitHub repository with owner-level administrative access.
+
+**Procedure:**
+1. Opened repository settings and verified the repository name and default branch.
+2. Completed GitHub's identity verification requirement to access collaborator settings.
+3. Inspected repository collaborators and direct access.
+4. Inspected classic branch protection rules and repository rulesets.
+5. Reviewed the available Advanced Security settings.
+6. Inspected repository deploy keys.
+7. Recorded the observed configuration without modifying settings.
+
+**Expected Result:** Repository ownership, visibility, access permissions, branch protection configuration, and available security settings can be inspected and documented.
+
+**Observed Results:**
+- Repository visibility: Private.
+- Repository owner: Personal GitHub account.
+- Default branch: `main`.
+- External collaborators: 0.
+- Direct contribution access: Repository owner only.
+- Classic branch protection rules: None configured.
+- Repository rulesets: None configured.
+- GitHub indicated that rulesets would not be enforced under the current private repository/account configuration.
+- Dependency graph: Disabled.
+- Dependabot alerts: Disabled.
+- Dependabot security updates: Disabled.
+- Grouped security updates: Disabled.
+- Dependabot version updates: Not configured.
+- Deploy keys: None configured.
+- Secret scanning and push protection: Status not established by the inspected settings page.
+
+**Findings:**
+- The repository is private and has no external collaborators.
+- The default branch does not have an enforced branch protection rule.
+- The project's branch, review, and merge procedures are currently followed voluntarily.
+- Dependency-monitoring features are disabled; the repository currently contains Markdown documentation rather than application dependencies.
+- No deploy keys were present.
+- No configuration changes were required to complete the inspection.
+
+**Status:** Passed — configuration inspection completed and findings documented.
+
+**Scope Note:** This test verified visible administrative settings. It did not test unauthorized access, GitHub App permissions, personal access tokens, or the effectiveness of security controls through simulated attacks. The absence of enforced branch protection is a documented limitation, not a successful security-control test.
+
 ## Planned Validation Activities
 
 - [X] GH-003 — Create and edit a documentation file.
 - [X] GH-004 — Create and switch branches.
 - [X] GH-005 — Submit a pull request.
 - [X] GH-006 — Review and merge a pull request.
-- [ ] GH-007 — Test repository access and configuration.
+- [X] GH-007 — Test repository access and configuration.
 - [ ] GH-008 — Validate selected GitHub REST API operations.
 
 ## Validation Standards
