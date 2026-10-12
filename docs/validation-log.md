@@ -35,9 +35,21 @@ This log provides supporting evidence for the accuracy of the project's technica
 
 **Status:** Passed — Markdown rendering and commit history verified.
 
+## Test GH-003 — Create and Edit a Documentation File
+
+**Objective:** Create a structured technical guide, revise its content, and verify that GitHub preserves both versions.
+
+**Expected Result:** The documentation file is created successfully, the revised content is committed, and both versions appear in the file's commit history.
+
+**Observed Result:** Created `docs/create-github-repository.md` and committed the initial guide (`020dc73`). Revised the repository verification instructions and committed the updated document (`c978529`). GitHub's file history on the `main` branch confirms both commits.
+
+**Status:** Passed — file creation, revision, and commit history verified.
+
+**Scope Note:** The document remains a draft. This test verifies the documentation workflow, not completion of the guide's full technical review.
+
 ## Planned Validation Activities
 
-- [ ] GH-003 — Create and edit a documentation file.
+- [X] GH-003 — Create and edit a documentation file.
 - [ ] GH-004 — Create and switch branches.
 - [ ] GH-005 — Submit a pull request.
 - [ ] GH-006 — Review and merge a pull request.
