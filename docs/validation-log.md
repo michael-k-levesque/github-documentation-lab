@@ -31,9 +31,9 @@ This log provides supporting evidence for the accuracy of the project's technica
 
 **Expected Result:** The updated README renders correctly in GitHub and is preserved in the repository's commit history.
 
-**Observed Result:** Markdown headings, paragraphs, lists, and inline code rendered correctly in the editor preview. The updated README was subsequently committed.
+**Observed Result:** Markdown headings, paragraphs, lists, and inline code rendered correctly in GitHub's preview. The README file history on the main branch confirms both the initial commit and the subsequent docs: establish project README commit.
 
-**Status:** Commit completed; commit-history verification pending.
+**Status:** Passed — Markdown rendering and commit history verified.
 
 ## Planned Validation Activities
 
