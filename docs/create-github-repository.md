@@ -50,6 +50,17 @@ After creating the repository, confirm that GitHub saved your selected configura
 
 The repository opens under the selected owner, displays the chosen visibility, and contains the requested initialization files.
 
+## Repository Visibility and Access
+
+Repository visibility determines who can view a repository. It does not automatically determine who can modify its contents.
+
+- **Public repositories:** Anyone can view the repository and its contents. Only users with appropriate permissions can make changes directly to the repository.
+- **Private repositories:** Access is limited to the owner and other authorized users, such as invited collaborators or eligible organization members.
+
+Sharing the URL of a private repository does not grant someone access. Access must be provided through the appropriate GitHub permissions.
+
+Before sharing a repository, confirm that its visibility is appropriate for the information it contains.
+
 ## Troubleshooting
 
 ### Repository name is unavailable
