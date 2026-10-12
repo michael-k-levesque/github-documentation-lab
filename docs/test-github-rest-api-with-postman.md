@@ -49,13 +49,13 @@ The collection uses literal URLs and requires **no environment variables**. If P
 
 ## 1. Import the collection
 
-1. Open the [collection JSON](../postman/GitHub-REST-API-Validation.postman_collection.json) in GitHub and use **Raw** to obtain the original JSON file. Download or save it with a `.json` extension, without copying the rendered GitHub page.
+1. Open the [collection JSON](../postman/GitHub-REST-API-Validation.postman_collection.json) on GitHub. Use the **Download raw file** icon near **Raw** to save the `.json` file. If your layout only offers **Raw**, open it and save the raw JSON as a `.json` file. Do not download the rendered GitHub page.
 2. Open a Postman workspace. Select **Import** (some versions label the entry point **Use resources or import**).
 3. Select the saved JSON file, or drag the file into the import dialog.
-4. Finish importing. Under **Collections**, confirm that **GitHub REST API Validation** appears.
-5. Expand the collection and confirm the three saved requests listed below.
+4. If Postman says **Collection exists**, select **Import as Copy** rather than **Replace** to keep your existing collection intact. Otherwise, complete the normal import.
+5. Under **Collections**, confirm **GitHub REST API Validation** or **GitHub REST API Validation Copy** appears. Expand the newly imported collection and verify that the three requests listed below are present.
 
-**If the collection already exists:** Importing may create a second copy, depending on the workspace and import choice. Select the newly imported collection for this exercise so you do not accidentally modify your previous test evidence.
+**Tip for first-time users:** In the web interface, the import control may be a small icon next to the **+** above **Collections**. Importing a file and **using/forking** an existing collection are different actions; you do not need to create a fork for this test.
 
 ### Imported requests
 
@@ -199,12 +199,14 @@ The four saved assertions require:
 
 Use a collection run to execute all three saved requests as one test suite.
 
-1. In **Collections**, select **GitHub REST API Validation**.
-2. Select **Run** (depending on the Postman layout, this may appear in the collection's menu).
-3. Choose a **Functional** run and a local/manual execution method where the interface offers these options.
-4. Confirm all three requests are selected and use **one iteration**. Keep the default request order for comparison with this guide.
-5. Start the run.
-6. Review the summary and expand any failed assertion to inspect its name, expected value, and actual value.
+1. Under **Collections**, select the collection you just imported: **GitHub REST API Validation** or **GitHub REST API Validation Copy**. Click the **collection name**, not an individual request.
+2. In the collection overview, select **Run** (in the upper-right area in the tested Postman web layout).
+3. Under **Run type**, choose **Functional**. Under **Run method**, choose **Local**.
+4. Confirm **3 of 3 requests** are selected, **Iteration data** is **None**, and **Iterations** is **1**. Keep the default request order for comparison with this guide.
+5. Select **Start run** and wait for the summary.
+6. Check **All**, **Passed**, **Failed**, and **Errors**, then inspect each request's assertion results. Expand any failed assertion to view details.
+
+**About Stop run if an error occurs:** Postman uses this setting for request-sending problems and script exceptions. A deliberately returned HTTP `404` is not, by itself, a script or transport error. You do **not** need to turn off this setting to let the saved negative test run. If a genuine script or transport error occurs, record it before trying again.
 
 ### Collection acceptance criteria
 
