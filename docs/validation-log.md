@@ -178,7 +178,7 @@ This log provides supporting evidence for the accuracy of the project's technica
 | Browser cache observation | Public repository lookup inspected with Chrome DevTools | `304 Not Modified` observed for a cached representation; `200 OK` also observed with caching disabled. | Observation only; not part of the 12 Postman assertions |
 
 **Evidence:**
-- Postman collection: `GitHub REST API Validation`; requests `GH-008-01`, `GH-008-02`, and `GH-008-03` saved in the workspace.
+- Reusable test artifact: [GitHub REST API Validation — Postman Collection v2.1](../postman/GitHub-REST-API-Validation.postman_collection.json), containing requests `GH-008-01`, `GH-008-02`, and `GH-008-03`, along with their 12 post-response assertions. The portable copy omits workspace-specific export metadata; request URLs, headers, and tests are preserved.
 - Screenshots captured during testing showed the configured requests, API responses, and `4/4` passing test results for each request. These screenshots are not stored in this GitHub repository.
 - Public API reference: https://docs.github.com/en/rest/about-the-rest-api/api-versions
 
@@ -191,7 +191,7 @@ This log provides supporting evidence for the accuracy of the project's technica
 
 **Status:** Passed — selected GitHub REST API operations and negative response validated; 12/12 Postman assertions passed. Browser cache behavior separately observed.
 
-**Scope Note:** This exercise validates the documented request/response behavior at the time of testing. The Postman collection has not been exported to this repository, and no independent peer review was performed.
+**Scope Note:** This exercise validates the documented request/response behavior at the time of testing. The collection is now archived in this repository for independent import and rerunning; the export does not contain past execution results. No independent peer review was performed.
 
 ## Planned Validation Activities
 
