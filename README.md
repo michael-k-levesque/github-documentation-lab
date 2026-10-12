@@ -19,9 +19,10 @@ This repository provides a controlled practice environment for researching GitHu
 
 - `README.md` — Project introduction, documentation index, and testing instructions.
 - [`docs/create-github-repository.md`](docs/create-github-repository.md) — Draft task-based GitHub repository creation guide (full technical review pending).
-- [`docs/validation-log.md`](docs/validation-log.md) — Test procedures and evidence for GH-001 through GH-008.
-- [`docs/test-github-rest-api-with-postman.md`](docs/test-github-rest-api-with-postman.md) — GH-009 step-by-step API testing guide (**draft; fresh procedure validation pending**).
+- [`docs/validation-log.md`](docs/validation-log.md) — Test procedures, observed results, and limitations for GH-001 through GH-009.
+- [`docs/test-github-rest-api-with-postman.md`](docs/test-github-rest-api-with-postman.md) — GH-009 Postman testing guide (**author-led reproduction passed October 12, 2026; no independent peer review**).
 - [`postman/GitHub-REST-API-Validation.postman_collection.json`](postman/GitHub-REST-API-Validation.postman_collection.json) — Importable Postman collection with automated REST API checks.
+- [`docs/quality-review-gh-010.md`](docs/quality-review-gh-010.md) — GH-010 documentation quality review, corrections, verification method, and outstanding publication decisions.
 
 ## Run the GitHub REST API tests in Postman
 
@@ -42,10 +43,10 @@ The GH-008 case study includes three **read-only, unauthenticated** requests aga
 ### Import and execute
 
 1. Open the [Postman collection JSON](postman/GitHub-REST-API-Validation.postman_collection.json) on GitHub and use **Raw** to download it (or save the raw JSON as a `.json` file).
-2. In Postman, choose **Import** and select the downloaded JSON file.
-3. Expand **GitHub REST API Validation** and open a request. Verify that the `Accept: application/vnd.github+json` and `X-GitHub-Api-Version: 2026-03-10` headers are enabled.
-4. Click **Send**, then open **Test Results** to see the four automated assertions for that request. Repeat for the other two requests, or run the collection in Postman's Collection Runner.
-5. Expect **12 passing assertions across the three requests** when GitHub returns the documented responses. The `404` in GH-008-02 is intentional; its assertions should pass.
+2. In Postman, choose **Import** and select the downloaded JSON file. If Postman displays **Collection exists**, choose **Import as Copy** to avoid overwriting the original collection.
+3. In **Collections**, expand the newly imported **GitHub REST API Validation** collection (or **GitHub REST API Validation Copy**) and open the first request. Verify that `Accept: application/vnd.github+json` and `X-GitHub-Api-Version: 2026-03-10` are enabled.
+4. Click **Send**, then open **Test Results** to see that request's four automated assertions. Repeat for the other two saved requests.
+5. To execute the entire suite, select the newly imported collection, choose **Run**, set **Functional**, **Local**, **Iterations: 1**, and confirm all three requests are selected before choosing **Start run**. Expect **12 passing assertions** when GitHub returns the documented responses. The `404` in GH-008-02 is intentional and should pass its assertions.
 
 For a detailed walkthrough, including error interpretation, test assertions, troubleshooting, and evidence collection, see the [GH-009 Postman testing guide](docs/test-github-rest-api-with-postman.md). **GH-009 was reproduced on October 12, 2026: the archived collection imported successfully and all 12 assertions passed in a local functional collection run.** This was an author-led walkthrough, not independent peer review.
 
@@ -64,9 +65,9 @@ Documentation will be developed using the following principles:
 
 ## Project Status
 
-**In Development**
+**Documentation reviewed; publication decision pending.**
 
-The practice repository has been initialized. Documentation development, workflow testing, and technical validation are ongoing activities.
+GH-001 through GH-009 have recorded workflow outcomes, including GH-009's successful import-and-rerun verification. GH-010 reviews consistency, source alignment, and portfolio presentation. The repository-creation guide remains a draft pending a separate end-to-end novice walkthrough. The repository is currently **private**; outsiders cannot browse these links unless granted access. Publication requires an explicit visibility and history review. See the [GH-010 review](docs/quality-review-gh-010.md) for scope and remaining work.
 
 ## Project Context
 
