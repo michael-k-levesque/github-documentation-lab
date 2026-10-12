@@ -2,7 +2,7 @@
 
 **Audience:** Technical writers, QA analysts, support engineers, and developers who need to reproduce and document REST API behavior.  
 **Platform:** Postman (web or desktop), GitHub REST API  
-**Document status:** Draft — source and collection reviewed; fresh import-and-rerun verification pending  
+**Document status:** Validated walkthrough — GH-009 reproduced from the archived collection on October 12, 2026; independent peer review not performed  
 **Case study:** GH-009, based on the completed GH-008 test suite  
 **Last reviewed:** October 2026
 
@@ -217,7 +217,7 @@ Use a collection run to execute all three saved requests as one test suite.
 | HTTP status mix | Two `200` responses; one intentional `404` response |
 | Unauthorized write operations | None |
 
-**Do not report a new 12/12 outcome until you have actually run the imported collection.** GH-008 recorded 12/12 during its original hands-on Postman testing; that is historical evidence, not a certification of this new import or a future rerun.
+**Recorded GH-009 walkthrough (October 12, 2026):** The collection downloaded from GitHub was imported in Postman as a separate copy, each request was sent individually (4/4 assertions passed), and a Local Functional collection run completed one iteration with **3 requests, 12/12 assertions passed, 0 failures, and 0 errors** (1.447 seconds total). This observation is documented in the [GH-009 validation log](validation-log.md#gh-009--postman-guide-procedure-verification). The result does not guarantee the same outcome on future executions.
 
 A collection run result and an individually sent request are both valid ways to inspect tests, but they are different evidence artifacts. If the Collection Runner is unavailable in your client, send each saved request separately and record all three results. Do not imply that a batch run took place.
 
@@ -278,7 +278,7 @@ Use the following test record for a new run (do not substitute GH-008's historic
 | Outcome | Passed, Failed, or Blocked |
 | Deviations | Any unexpected behavior, with troubleshooting and retest notes |
 
-**Evidence discipline:** The JSON collection stores request definitions and scripts; it does **not** store the original screenshot evidence or proof of executing the tests. GH-008's original manual runs were observed as **12/12 passed**. GH-009 remains a draft until its independent import/run procedure is exercised and recorded.
+**Evidence discipline:** The JSON collection stores request definitions and scripts; it does **not** store screenshot evidence or execution results. GH-008's original manual runs were observed as **12/12 passed**. The author separately reproduced the workflow for GH-009 on October 12, 2026, and recorded the results in the [validation log](validation-log.md#gh-009--postman-guide-procedure-verification). Screenshots were reviewed during the walkthrough but are not committed to this repository. This is not independent peer approval.
 
 ## 10. Boundaries and next-level improvements
 
