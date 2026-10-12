@@ -20,6 +20,7 @@ This repository provides a controlled practice environment for researching GitHu
 - `README.md` — Project introduction, documentation index, and testing instructions.
 - [`docs/create-github-repository.md`](docs/create-github-repository.md) — Draft task-based GitHub repository creation guide (full technical review pending).
 - [`docs/validation-log.md`](docs/validation-log.md) — Test procedures and evidence for GH-001 through GH-008.
+- [`docs/test-github-rest-api-with-postman.md`](docs/test-github-rest-api-with-postman.md) — GH-009 step-by-step API testing guide (**draft; fresh procedure validation pending**).
 - [`postman/GitHub-REST-API-Validation.postman_collection.json`](postman/GitHub-REST-API-Validation.postman_collection.json) — Importable Postman collection with automated REST API checks.
 
 ## Run the GitHub REST API tests in Postman
@@ -45,6 +46,8 @@ The GH-008 case study includes three **read-only, unauthenticated** requests aga
 3. Expand **GitHub REST API Validation** and open a request. Verify that the `Accept: application/vnd.github+json` and `X-GitHub-Api-Version: 2026-03-10` headers are enabled.
 4. Click **Send**, then open **Test Results** to see the four automated assertions for that request. Repeat for the other two requests, or run the collection in Postman's Collection Runner.
 5. Expect **12 passing assertions across the three requests** when GitHub returns the documented responses. The `404` in GH-008-02 is intentional; its assertions should pass.
+
+For a detailed walkthrough, including error interpretation, test assertions, troubleshooting, and evidence collection, see the [GH-009 Postman testing guide](docs/test-github-rest-api-with-postman.md). **GH-009 was reproduced on October 12, 2026: the archived collection imported successfully and all 12 assertions passed in a local functional collection run.** This was an author-led walkthrough, not independent peer review.
 
 The exported collection contains the request definitions and test scripts; **it does not include stored response snapshots or independently certify future test runs**. The observed results and testing limitations are recorded in [GH-008 of the validation log](docs/validation-log.md#test-gh-008--validate-selected-github-rest-api-operations).
 
