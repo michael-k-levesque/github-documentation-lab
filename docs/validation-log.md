@@ -271,17 +271,19 @@ This log provides supporting evidence for the accuracy of the project's technica
 2. Queried the connected GitHub repository metadata for `michael-k-levesque/github-documentation-lab`; it reported `visibility: public` and default branch `main`.
 3. Retrieved README, validation log, and the GH-011 audit report from `main` through the connected GitHub integration; the files remained accessible through that authenticated connection.
 4. Verified that the existing published README correctly describes the repository as a public portfolio project while preserving historical pre-publication audit descriptions.
-5. Attempted independent signed-out access with a separate browsing service and an unauthenticated network client, but neither was available in this environment. **No signed-out read test was completed.**
+5. The automated signed-out check was unavailable in the assistant's environment. The repository owner subsequently opened a Chrome **Incognito** window while GitHub displayed **Sign in** and **Sign up**, confirming the user was not authenticated in that window.
+6. In that Incognito window, the owner loaded `https://github.com/michael-k-levesque/github-documentation-lab`; screenshot evidence shows the **Public** badge, tracked file list, and rendered README.
+7. In the same Incognito window, the owner opened `https://github.com/michael-k-levesque/github-documentation-lab/blob/main/docs/test-github-rest-api-with-postman.md`; screenshot evidence shows the guide's rendered Markdown preview, title, audience, document status and overview. The screenshot confirms this representative documentation page was publicly accessible without signing in.
 
-**Expected Result:** GitHub reports public visibility, original project files are intact, and a signed-out reader can open the repository, guides, JSON artifact and pull-request history.
+**Expected Result:** GitHub reports public visibility, original project files remain intact, and a signed-out reader can open the repository homepage and at least one representative documentation guide.
 
-**Observed Result:** **Public visibility confirmed** by GitHub's metadata and the owner's settings screenshot; current documentation accessible via authenticated connector. Independent anonymous-view access could not be tested here.
+**Observed Result:** **Public visibility and representative anonymous access confirmed.** Screenshots from Chrome Incognito show the repository homepage and the rendered Postman guide accessible with GitHub's **Sign in** and **Sign up** controls visible. The guide was also retrieved successfully through the connected GitHub integration. The screenshots remain in the project conversation, not committed to the repository.
 
-**Status:** **Partially passed — public visibility verified; signed-out access validation pending.** Do not count the signed-out check as passed until someone opens the repository and representative documents in a private/incognito browser window while logged out of GitHub.
+**Status:** **Passed — public visibility and signed-out access to the homepage and Postman guide verified on October 12, 2026.** This is user-performed acceptance testing, not a separate automated anonymous-browser test.
 
-**Remaining manual verification:** From a signed-out/private window, open [repository home](https://github.com/michael-k-levesque/github-documentation-lab), [repository creation guide](https://github.com/michael-k-levesque/github-documentation-lab/blob/main/docs/create-github-repository.md), [Postman guide](https://github.com/michael-k-levesque/github-documentation-lab/blob/main/docs/test-github-rest-api-with-postman.md), [Postman JSON](https://github.com/michael-k-levesque/github-documentation-lab/blob/main/postman/GitHub-REST-API-Validation.postman_collection.json), and [PR #4](https://github.com/michael-k-levesque/github-documentation-lab/pull/4). Record any access failures or rendering problems.
+**Additional optional checks:** Signed-out browsing of the [repository creation guide](https://github.com/michael-k-levesque/github-documentation-lab/blob/main/docs/create-github-repository.md), [Postman JSON](https://github.com/michael-k-levesque/github-documentation-lab/blob/main/postman/GitHub-REST-API-Validation.postman_collection.json), and [PR #4](https://github.com/michael-k-levesque/github-documentation-lab/pull/4) was not individually demonstrated by the supplied screenshots. The relevant files were verified in the repository through the connector; these optional links are not represented as separately anonymous-tested.
 
-**Scope Note:** GH-011's security/history review was a bounded audit; the current publication check does not extend that audit into a penetration test, historical artifact scan, or proof of external accessibility.
+**Scope Note:** GH-011's security/history review was a bounded audit. GH-012 confirms externally accessible public pages, not a penetration test, historical artifact scan, or independent peer review.
 
 ## Planned Validation Activities
 
@@ -294,7 +296,7 @@ This log provides supporting evidence for the accuracy of the project's technica
 - [X] GH-009 — Verify the Postman API testing guide through a fresh import and run.
 - [X] GH-010 — Review documentation quality and record publication blockers.
 - [X] GH-011 — Review reachable repository history and publication risks.
-- [ ] GH-012 — Verify public visibility **and** signed-out access to the portfolio repository.
+- [X] GH-012 — Verify public visibility **and** signed-out access to the portfolio repository homepage and representative guide.
 
 ## Validation Standards
 
