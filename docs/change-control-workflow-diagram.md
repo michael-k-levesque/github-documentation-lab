@@ -2,7 +2,7 @@
 
 **Audience:** Technical writers, documentation reviewers, and hiring managers looking for a reproducible example of a cross-tool documentation lifecycle.
 
-**Status:** Proposed publication on a GitHub documentation branch; final release requires pull-request review and merge.
+**Status:** Released to `main` October 14, 2026, in [GitHub PR #9](https://github.com/michael-k-levesque/github-documentation-lab/pull/9) via squash commit [`d05f904a`](https://github.com/michael-k-levesque/github-documentation-lab/commit/d05f904a821cdf0198b6038b6b250b9ed48fe7cb). Owner inspected and accepted the diagram; no independent peer review is claimed.
 
 **Author:** Repository owner. **Tool used:** diagrams.net (draw.io), web editor. **Source scenario:** [Jira GHDCS-2](https://mklevesque.atlassian.net/browse/GHDCS-2), [Project 02 Confluence record](https://mklevesque.atlassian.net/wiki/spaces/TWP/pages/1179652), and [merged GitHub Pull Request #8](https://github.com/michael-k-levesque/github-documentation-lab/pull/8).
 
@@ -67,8 +67,10 @@ Microsoft 365 Family does not include a full Visio editing license. This diagram
 - Final source verified as exact Git blob `d9109405babb69fcf830148398b182584857a0d4`.
 - Final SVG verified as exact Git blob `4bfb2807cbe027aef921912a73384f4ad3a104d4`.
 
+**Post-release verification:** After [PR #9](https://github.com/michael-k-levesque/github-documentation-lab/pull/9) was merged, the original `.drawio` and `.svg` blob hashes were retrieved from `main` and matched the uploaded artifacts. The Markdown guide and its README link were also fetched from `main` and found in place. The SVG's byte contents were verified through its Git blob hash (the connector omits inline text for large files); the separately rendered SVG preview had already passed visual inspection. GitHub reports PR #9 closed and merged. Release commit: `d05f904a821cdf0198b6038b6b250b9ed48fe7cb`.
+
 **Limitations:** The user visually confirmed the key connections within the diagrams.net editor. Connector endpoint existence was checked programmatically, but every possible external SVG viewer was not tested. No independent peer review, Visio operation, or SharePoint upload is claimed. Confluence and GitHub project-access settings may limit which linked records are visible to outside reviewers.
 
 ## Change control and reuse
 
-Track this diagram deliverable in [Jira GHDCS-3](https://mklevesque.atlassian.net/browse/GHDCS-3). Edit in a branch, review changes in a pull request, and verify the released files on `main` before closing the ticket. The original `.drawio` file is the source of truth; regenerate the SVG when the diagram changes.
+This diagram deliverable was tracked in [Jira GHDCS-3](https://mklevesque.atlassian.net/browse/GHDCS-3), with validation and publication recorded in the [Confluence Project 02 diagram record](https://mklevesque.atlassian.net/wiki/spaces/TWP/pages/2850817). [PR #9](https://github.com/michael-k-levesque/github-documentation-lab/pull/9) was squash-merged into `main`, and the released source, SVG blob hashes, Markdown document, and README link were verified. For later changes, edit in a separate branch, review in a pull request, and verify on `main`. The original `.drawio` file remains the source of truth; regenerate the SVG whenever the diagram changes.
