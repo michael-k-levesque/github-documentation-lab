@@ -285,6 +285,37 @@ This log provides supporting evidence for the accuracy of the project's technica
 
 **Scope Note:** GH-011's security/history review was a bounded audit. GH-012 confirms externally accessible public pages, not a penetration test, historical artifact scan, or independent peer review.
 
+## GHDCS-2 — Author-Led Repository Creation Walkthrough
+
+**Objective:** Execute and verify a single, safe GitHub.com repository-creation procedure to identify actual interface labels and validate the beginner guide's core steps.
+
+**Session:** October 2026, performed by the project author under instruction. The screenshots in the supporting project conversation document the creation form and the resulting repository page; the original screenshot files are not included in this public repository.
+
+**Prerequisites and test configuration:** Authorized personal GitHub account, signed-in web browser, a new disposable repository, **Private** visibility, **Add README: On**, **No .gitignore**, and **No license**. No existing portfolio repository was modified in the execution of this test. The private practice repository's contents are not part of this public evidence package.
+
+**Procedure:** Opened `https://github.com/new`; selected the personal owner; entered an available, non-sensitive repository name and a temporary-purpose description; chose Private; enabled README; kept optional .gitignore and license disabled; selected **Create repository**; examined the new repository's Code page and the metadata available in the connected GitHub account.
+
+**Expected result:** The repository is created under the chosen owner, remains private, contains the requested README and initial commit, and displays a default branch.
+
+**Observed result:** The creation form presented **General** (Owner, Repository name, Description) and **Configuration** (Choose visibility, Add README, Add .gitignore, Add license) sections. GitHub confirmed the entered name was available. The resulting repository page displayed the expected owner and name, a **Private** badge, `README.md` rendered on the page, one branch named `main`, and **1 Commit**. GitHub repository metadata corroborated private visibility and the default branch.
+
+| Planned verification | Outcome |
+| --- | --- |
+| Authorized owner selected | Pass |
+| Repository name accepted as available | Pass |
+| Description entered | Pass |
+| Visibility set to Private | Pass |
+| Add README enabled | Pass |
+| No .gitignore and No license selected | Pass |
+| Repository created and opened | Pass |
+| Expected file, branch, visibility, and initial commit shown | Pass |
+
+**Result:** **Passed — 8 of 8 checks in the tested configuration.** No failures appeared in the screenshots provided.
+
+**Scope and limitations:** This was a guided author-executed test, not an independent or unassisted novice usability study. The `+` menu route, template creation, different account types, creating an entirely empty repository, post-creation permission changes, and all troubleshooting branches were not exercised. GitHub controls and defaults can change. The private test repository's precise URL and screenshot captures have not been added to the public repository. This validation alone does not establish that the revised documentation has been independently reviewed or released.
+
+**Traceability:** Confluence Project 02 and Jira work item **GHDCS-2** track the source-baseline review, observed workflow, draft documentation change, review steps, and remaining publication gate. The planned guide revision is in `docs/create-github-repository.md`; the proposed branch is `docs/ghdcs-2-repository-guide`.
+
 ## Planned Validation Activities
 
 - [X] GH-003 — Create and edit a documentation file.
