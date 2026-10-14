@@ -14,6 +14,7 @@ A public portfolio project demonstrating how I research software workflows, writ
 | **[Postman collection (JSON)](postman/GitHub-REST-API-Validation.postman_collection.json)** | Reusable executable test artifact: three read-only GitHub REST API requests with 12 post-response assertions |
 | **[Validation log](docs/validation-log.md)** | Recorded objectives, procedures, expected and observed results, supporting evidence, and boundaries of each test |
 | **[How to Create a GitHub Repository](docs/create-github-repository.md)** | Beginner-oriented creation guide updated after an author-led 8/8 test; independent unassisted novice review and optional-path tests remain pending |
+| **[Change-Control Workflow Diagram](docs/change-control-workflow-diagram.md)** | Editable diagrams.net source, embedded-editable SVG, 12-step Jira/Confluence/GitHub process, and a documented artifact-validation record (GHDCS-3) |
 
 ## Case study: Documenting a reproducible API test workflow
 
