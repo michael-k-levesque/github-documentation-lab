@@ -16,7 +16,7 @@ You must have a GitHub account and be signed in. You must also have permission t
 
 ## Procedure
 
-These instructions describe creation of a **new, blank repository**. GitHub can also create repositories from templates, but template-based creation was not part of the recorded walkthrough. See [GitHub's template procedure](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) if that is your goal.
+These instructions describe creating a **new repository from scratch**, rather than starting from a template. You may initialize the repository with a README, so it does not have to remain empty. GitHub can also create repositories from templates, but template-based creation was not part of the recorded walkthrough. See [GitHub's template procedure](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) if that is your goal.
 
 1. Open [GitHub](https://github.com) and sign in.
 2. Select the **+** menu near the upper-right corner, then choose **New repository**. Alternatively, open [github.com/new](https://github.com/new) directly. **The direct URL was used in the documented test; the + menu path is supported by GitHub Docs but was not separately tested in that session.**
