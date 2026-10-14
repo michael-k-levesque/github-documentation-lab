@@ -2,7 +2,7 @@
 
 **Audience:** Beginning GitHub users  
 **Platform:** GitHub.com (web interface)  
-**Document status:** Updated against GitHub Docs and the author's October 2026 hands-on repository-creation walkthrough (8 of 8 checks passed for the tested configuration). Independent beginner usability review and optional-path testing remain pending.
+**Document status:** Updated against GitHub Docs and the author's October 14, 2026 hands-on repository-creation walkthrough (8 of 8 checks passed for the tested configuration). Independent beginner usability review and optional-path testing remain pending.
 
 ## Overview
 
